@@ -1,0 +1,9 @@
+#Row number delimiters.
+StartRow = 0
+EndRow = 10
+
+#Lista de data tables para diferentes escenarios de prueba.
+data_table_A = test_file_A.xlsx
+data_table_B = test_file_B.xlsx
+data_table_C = test_file_C.xlsx
+data_table_D = test_file_A.xlsx

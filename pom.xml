@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.infosgroup.client</groupId>
+  <artifactId>selenium_junit4_framework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>selenium_junit4_framework</name>
+  <description>Test automation framework implementing selenium + junit 4 + parametrization.</description>
+  
+  <properties>
+    <java.version>1.8</java.version>
+  	<maven.compiler.source>${java.version}</maven.compiler.source>
+  	<maven.compiler.target>${java.version}</maven.compiler.target>
+  	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+  <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+	<dependency>
+	    <groupId>org.seleniumhq.selenium</groupId>
+	    <artifactId>selenium-java</artifactId>
+	    <version>3.141.59</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+	<dependency>
+	    <groupId>io.github.bonigarcia</groupId>
+	    <artifactId>webdrivermanager</artifactId>
+	    <version>3.8.1</version>
+	</dependency>
+  
+	<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.13</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+	<dependency>
+	    <groupId>com.relevantcodes</groupId>
+	    <artifactId>extentreports</artifactId>
+	    <version>2.41.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+	<dependency>
+	    <groupId>ru.yandex.qatools.ashot</groupId>
+	    <artifactId>ashot</artifactId>
+	    <version>1.5.4</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.6</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>3.9</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>4.1.1</version>
+	</dependency>
+	
+	<!-- 
+	https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+	Failed to load class "org.slf4j.impl.StaticLoggerBinder"
+	The Simple Logging Facade for Java (SLF4J) serves as a simple facade 
+	or abstraction for various logging frameworks (e.g. java.util.logging,
+	 logback, log4j). This allows the end user to plug in the desired 
+	 logging framework at deployment time.SLF4J facilitates your code to 
+	 make logging calls without binding to a specific logging implementation. 
+	 This comes real handy for libraries where it is not desired to hard bind 
+	 the API to a particular logging framework; the program might be using 
+	 another logging implementation.
+	 -->
+	
+	<!-- cambiar la version de esta dependencia para trubleshooting-->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-simple</artifactId>
+	    <version>1.6.1</version>
+	</dependency>
+	
+  </dependencies>
+  
+  <!-- JUNIT XML REPORT: Se usa para guardar los resultados junit en el target del projecto -->
+      <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </reporting>
+    
+        <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                	<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+            </plugin>
+        </plugins>
+    </build>
+  
+</project>
